@@ -26,6 +26,12 @@
           <li><input type="search" placeholder="Search"></li>
           <li><button type="button" class="button">Search</button></li>
         </ul>
+
+        <% if (loggedIn) { %>
+          <a href="/logout">Logout</a>
+        <% } else { %>
+          <a href="/login">Login</a>
+        <% } %>
       </div>
     </div>
   </div>

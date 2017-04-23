@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Studios</h1>
+  <% for (const studio of studios) { %>
+    <p><a href="/studios/<%= studio._id %>"><%= studio.name %></a></p>
+  <% } %>
+</div>

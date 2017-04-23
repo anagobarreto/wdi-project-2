@@ -1,15 +1,41 @@
-<h1><%= artist.name %></h1>
-<p><%= artist.studio %></p>
-<p><%= artist.location %></p>
-<p><%= artist.instagram %></p>
-<p><%= artist.contact %></p>
-<p><%= artist.website %></p>
+<% const instagramProfilePic = instagram.items[0].user.profile_picture; %>
+<div class="cover">
+  <div class="background">
+    <div class="image-container">
+      <% for (const item of instagram.items.slice().sort(() => .5 - Math.random())) { %>
+        <img src="<%= item.images.thumbnail.url %>"></a>
+      <% } %>
+    </div>
+  </div>
 
-<h2>Photos</h2>
-<p>
-  <% for (const item of instagram.items) { %>
-    <a href="<%= item.link %>"><img src="<%= item.images.thumbnail.url %>"></a>
-  <% } %>
-</p>
+  <div class="container info">
+    <img class="profile-picture" src="<%= instagramProfilePic %>" alt="">
 
-<h2>Reviews</h2>
+    <div class="left">
+      <h1><%= artist.name %></h1>
+      <p><%= artist.studio %></p>
+      <p><%= artist.location %></p>
+    </div>
+
+    <div class="right">
+      <p><a href="https://instagram.com/<%= artist.instagram %>"><%= artist.instagram %></a></p>
+      <p><a href="mailto:<%= artist.contact %>"><%= artist.contact %></a></p>
+
+      <% if (artist.website) { %>
+        <p><a href="<%= artist.website %>"><%= artist.website %></a></p>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <h2>Portfolio</h2>
+  <p>
+    <% for (const item of instagram.items) { %>
+      <a href="<%= item.link %>"><img class="portfolio-image" src="<%= item.images.low_resolution.url %>"></a>
+    <% } %>
+  </p>
+
+  <h2>Reviews</h2>
+</div>

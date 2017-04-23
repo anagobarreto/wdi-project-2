@@ -1,0 +1,72 @@
+.cover {
+  background-color: #000;
+  margin-bottom: 10px;
+  padding: 20px 0;
+  position: relative;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+
+  a {
+    color: inherit;
+  }
+
+  .left {
+    float: left;
+
+    h1 {
+      line-height: 60px;
+    }
+
+    p {
+      line-height: 35px;
+    }
+  }
+
+  .right {
+    float: right;
+    padding: 37.5px 0;
+
+    p {
+      line-height: 25px;
+    }
+  }
+
+  .background {
+    overflow: hidden;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.6;
+
+    .image-container {
+      width: 3000px;
+      height: 100%;
+    }
+
+    img {
+      float: left;
+      height: 100%;
+    }
+  }
+
+  .info {
+    position: relative;
+    z-index: 2;
+  }
+
+  .profile-picture {
+    float: left;
+    margin-right: 20px;
+  }
+
+  h1, p {
+    margin: 0;
+  }
+}
+
+.portfolio-image {
+
+}

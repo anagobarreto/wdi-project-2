@@ -47,7 +47,7 @@ router.get('/auth/facebook/callback',
     res.redirect('/');
   });
 
-router.get('/', (req, res) => res.render('statics/home'));
+router.get('/', (req, res) => res.render('statics/home', {noSearch: true}));
 
 router.get('/login', (req, res) => res.render('statics/login'));
 router.get('/logout', function(req, res){
@@ -79,5 +79,19 @@ router.route('/artists/:id/edit')
   .get(secureRoute, artists.edit);
 router.route('/artists/:id')
   .delete(secureRoute, artists.delete);
+
+const studios = require('../controllers/studios');
+router.route('/studios')
+  .get(studios.index)
+  .post(secureRoute, studios.create);
+router.route('/studios/new')
+  .get(secureRoute, studios.new);
+router.route('/studios/:id')
+  .get(studios.show)
+  .put(secureRoute, studios.update);
+router.route('/studios/:id/edit')
+  .get(secureRoute, studios.edit);
+router.route('/studios/:id')
+  .delete(secureRoute, studios.delete);
 
 module.exports = router;

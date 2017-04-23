@@ -1,0 +1,4 @@
+<h1>Artists</h1>
+<% for (const artist of artists) { %>
+  <p><a href="/artists/<%= artist._id %>"><%= artist.name %></a></p>
+<% } %>

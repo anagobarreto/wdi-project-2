@@ -1,0 +1,15 @@
+<h1><%= artist.name %></h1>
+<p><%= artist.studio %></p>
+<p><%= artist.location %></p>
+<p><%= artist.instagram %></p>
+<p><%= artist.contact %></p>
+<p><%= artist.website %></p>
+
+<h2>Photos</h2>
+<p>
+  <% for (const item of instagram.items) { %>
+    <a href="<%= item.link %>"><img src="<%= item.images.thumbnail.url %>"></a>
+  <% } %>
+</p>
+
+<h2>Reviews</h2>

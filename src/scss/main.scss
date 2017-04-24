@@ -1,3 +1,15 @@
 @import "bootstrap";
 @import "homepage";
 @import "artists";
+
+body {
+  color: #b3cde0;
+  background-color: #011f4b;
+}
+
+nav {
+  background-color: #005b96 !important;
+  border: none !important;
+  border-color: none !important;
+  color: #6497b1 !important;
+}

@@ -13,6 +13,7 @@ mongoose.connect(env.db, () => {
 Artist.collection.drop();
 Studio.collection.drop();
 
+
 const createArtists = Artist.create([
   {
     name: 'Mike Moses',
@@ -107,6 +108,13 @@ const createArtists = Artist.create([
     instagram: 'jack_ankersen',
     contact: 'jack_ankersen@hotmail.com',
     website: 'https://www.etsy.com/se-en/shop/JackAnkersen'
+  }, {
+    name: 'Scott Move',
+    studio: 'Parliament Tattoo',
+    location: 'London, UK',
+    instagram: 'scottmove',
+    contact: 'scottmove@gmail.com',
+    website: 'http://www.parliamenttattoo.com/'
   }
 ]).then(artists => {
   console.log(`${artists.length} artists were created`);
@@ -114,10 +122,16 @@ const createArtists = Artist.create([
 
 const createStudios = Studio.create([
   {
-    name: 'asdfasdf',
-    location: 'asdfasdf',
-    contact: 'asdfasdf',
-    website: 'asdfasdf'
+    name: 'Parliament Hill',
+    location: 'London, UK',
+    contact: 'booking@parliamenttattoo.com',
+    website: 'http://www.parliamenttattoo.com/contact'
+  },
+  {
+    name: 'Unkindness Art',
+    location: 'Richmond, VA',
+    contact: 'unkindnessart@gmail.com',
+    website: 'http://unkindnessart.com/'
   }
 ]).then(studios => {
   console.log(`${studios.length} studios were created`);

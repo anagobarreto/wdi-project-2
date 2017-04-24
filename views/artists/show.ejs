@@ -31,11 +31,13 @@
 <div class="container">
 
   <h2>Portfolio</h2>
-  <p>
-    <% for (const item of instagram.items) { %>
-      <a href="<%= item.link %>"><img class="portfolio-image" src="<%= item.images.low_resolution.url %>"></a>
-    <% } %>
-  </p>
+  <div class="portfoliopics">
+    <p>
+      <% for (const item of instagram.items) { %>
+        <a href="<%= item.link %>"><img class="portfolio-image" src="<%= item.images.low_resolution.url %>"></a>
+      <% } %>
+    </p>
+  </div>
 
   <h2>Reviews</h2>
 </div>

@@ -13,3 +13,15 @@ nav {
   border-color: none !important;
   color: #6497b1 !important;
 }
+
+
+.portfoliopics img {
+  border-radius: 25px;
+  width: 250px;
+  height: 250px;
+  filter: grayscale(90%);
+
+  .hover {
+    filter: none;
+  }
+}

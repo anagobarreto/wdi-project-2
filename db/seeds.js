@@ -62,7 +62,7 @@ const createArtists = Artist.create([
     location: 'Eastbourne, UK',
     instagram: 'momotattoos',
     contact: 'momosdreams@gmail.com',
-    website: 'http://higginsandcotattoo.co.uk/'
+    website: 'http://higginsandcotattoo.co.uk'
   }, {
     name: 'Craig Gardyan',
     studio: 'Grim Tattoo',
@@ -87,14 +87,14 @@ const createArtists = Artist.create([
     studio: 'Sacred Tattoo',
     location: 'New York, US',
     instagram: 'electricsheena',
-    website: 'http://www.sacredtattoo.com/'
+    website: 'http://www.sacredtattoo.com'
   }, {
     name: 'Mirkosata',
     studio: 'Satatttvision',
     location: 'Milano, Italy',
     instagram: 'mirkosata',
     contact: 'satatttvision@gmail.com',
-    website: 'http://satatttvision.tumblr.com/'
+    website: 'http://satatttvision.tumblr.com'
   }, {
     name: 'Piotr Gie',
     studio: 'Rock n Roll Tattoo',
@@ -114,7 +114,7 @@ const createArtists = Artist.create([
     location: 'London, UK',
     instagram: 'scottmove',
     contact: 'scottmove@gmail.com',
-    website: 'http://www.parliamenttattoo.com/'
+    website: 'http://www.parliamenttattoo.com'
   }
 ]).then(artists => {
   console.log(`${artists.length} artists were created`);
@@ -131,12 +131,17 @@ const createStudios = Studio.create([
     name: 'Unkindness Art',
     location: 'Richmond, VA',
     contact: 'unkindnessart@gmail.com',
-    website: 'http://unkindnessart.com/'
+    website: 'http://unkindnessart.com'
+  },
+  {
+    name: 'Black Garden',
+    location: 'London, UK',
+    contact: 'blackgardentattoo@hotmail.com',
+    website: 'http://blackgardentattoo.com'
   }
 ]).then(studios => {
   console.log(`${studios.length} studios were created`);
 });
-
 
 Promise.all([createArtists, createStudios])
   .catch(err => {

@@ -1,4 +1,5 @@
 const Studio = require('../models/studio');
+const Artist = require('../models/artist');
 
 function studiosIndex(req,res) {
   Studio
@@ -21,7 +22,10 @@ function studiosShow(req, res) {
         return res.render('error', { error: 'No Studio found.' });
       }
 
-      return res.render('studios/show', { studio });
+      return Artist.find({ studio: studio.name })
+        .then(artists => {
+          return res.render('studios/show', { studio, artists });
+        });
     })
     .catch(err => {
       return res.render('error', { error: err });

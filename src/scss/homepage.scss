@@ -2,6 +2,15 @@
   font-size: 90px;
 }
 
+h1 {
+  padding-bottom: 20px;
+}
+
+.input-group-btn {
+  padding-bottom: 30px;
+}
+
+
 .home-search {
   width: 53%;
   margin: 0 auto;
@@ -11,13 +20,7 @@
 .logo img {
   width: 80px;
   height: 80px;
-  float: left;
-}
-
-.logotop img{
-  width: 30px;
-  height: 30px;
-  float: left;
+  filter: invert(100%);
 }
 
 .map {
@@ -26,4 +29,38 @@
 
 .reasons {
   padding-bottom: 150px;
+
+    img {
+      filter: invert(100%);
+    }
+}
+
+.fullstar img {
+  width: 100%;
+  height: 100%;
+}
+
+.eye img {
+  width: 10px;
+  height: 10px;
+}
+
+.menu img {
+  width: 30px;
+  height: 30px;
+}
+
+.calendar img {
+  width: 30px;
+  height: 30px;
+}
+
+.search img {
+  width: 30px;
+  height: 30px;
+}
+
+.shop img {
+  width: 30px;
+  height: 30px;
 }

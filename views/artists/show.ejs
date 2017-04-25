@@ -29,14 +29,22 @@
 </div>
 
 <div class="container">
-
   <h2>Portfolio</h2>
   <div class="portfoliopics">
-    <p>
-      <% for (const item of instagram.items) { %>
-        <a href="<%= item.link %>"><img class="portfolio-image" src="<%= item.images.low_resolution.url %>"></a>
-      <% } %>
-    </p>
+    <% const instagramPhotos = instagram.items.slice(); %>
+    <% while (instagramPhotos.length) { %>
+      <% const rowPhotos = [instagramPhotos.shift(), instagramPhotos.shift(), instagramPhotos.shift(), instagramPhotos.shift()]; %>
+      <div class="row">
+        <% for (const item of rowPhotos) { %>
+          <% if (!item) continue; %>
+          <div class="col-md-3">
+            <a class="portfolio-image-container" href="<%= item.link %>">
+              <img class="portfolio-image" src="<%= item.images.low_resolution.url %>">
+            </a>
+          </div>
+        <% } %>
+      </div>
+    <% } %>
   </div>
 
   <h2>Reviews</h2>

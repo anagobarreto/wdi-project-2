@@ -60,6 +60,7 @@
   .profile-picture {
     float: left;
     margin-right: 20px;
+    border-radius: 15px;
   }
 
   h1, p {
@@ -67,6 +68,21 @@
   }
 }
 
-.portfolio-image {
+.portfolio-image-container {
+  display: block;
+  margin-bottom: 30px;
+}
 
+.portfoliopics {
+  margin-top: 30px;
+
+  img {
+    border-radius: 25px;
+    width: 100%;
+    filter: grayscale(100%);
+
+    &:hover {
+      filter: none;
+    }
+  }
 }

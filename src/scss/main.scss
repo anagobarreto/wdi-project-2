@@ -4,24 +4,31 @@
 
 body {
   color: #b3cde0;
-  background-color: #011f4b;
+  background-color: #222;
+  color: #fff;
+  font-family: 'Droid Sans Mono', monospace;
 }
 
-nav {
-  background-color: #005b96 !important;
-  border: none !important;
-  border-color: none !important;
-  color: #6497b1 !important;
+.navbar-brand {
+  padding: 10px 15px;
 }
 
-
-.portfoliopics img {
-  border-radius: 25px;
-  width: 250px;
-  height: 250px;
-  filter: grayscale(90%);
-
-  .hover {
-    filter: none;
+.navbar {
+  input {
+    box-shadow: none !important;
+    background-color: #222;
+    color: #fff;
   }
+}
+
+.logotop img {
+  filter: invert(100%);
+  width: 30px;
+  height: 30px;
+  display: inline;
+}
+
+.reasons img {
+  width: 64px;
+  height: 64px;
 }

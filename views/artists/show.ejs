@@ -1,15 +1,14 @@
-<% const instagramProfilePic = instagram.items[0].user.profile_picture; %>
 <div class="cover">
   <div class="background">
     <div class="image-container">
-      <% for (const item of instagram.items.slice().sort(() => .5 - Math.random())) { %>
+      <% for (const item of artist.instagramData.items.slice().sort(() => .5 - Math.random())) { %>
         <img src="<%= item.images.thumbnail.url %>"></a>
       <% } %>
     </div>
   </div>
 
   <div class="container info">
-    <img class="profile-picture" src="<%= instagramProfilePic %>" alt="">
+    <img class="profile-picture" src="<%= artist.profilePic %>" alt="">
 
     <div class="left">
       <h1><%= artist.name %></h1>
@@ -29,9 +28,14 @@
 </div>
 
 <div class="container">
+  <% if (loggedIn && user.admin) { %>
+    <a class="btn btn-danger" href="/artists/<%= artist._id %>">Delete</a>
+    <a class="btn btn-primary" href="/artists/<%= artist._id %>/edit">Edit</a>
+  <% } %>
+  
   <h2>Portfolio</h2>
   <div class="portfoliopics">
-    <% const instagramPhotos = instagram.items.slice(); %>
+    <% const instagramPhotos = artist.instagramData.items.slice(); %>
     <% while (instagramPhotos.length) { %>
       <% const rowPhotos = [instagramPhotos.shift(), instagramPhotos.shift(), instagramPhotos.shift(), instagramPhotos.shift()]; %>
       <div class="row">

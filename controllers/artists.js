@@ -1,5 +1,4 @@
 const Artist = require('../models/artist');
-const request = require('request');
 
 function artistsIndex(req,res) {
   Artist
@@ -13,21 +12,6 @@ function artistsIndex(req,res) {
     });
 }
 
-const instagramCache = {};
-
-function getInstagramData(username, callback) {
-  if (instagramCache[username]) {
-    return callback(null, instagramCache[username]);
-  }
-
-  request(`https://instagram.com/${username}/media`, {json: true}, function(err, res, data) {
-    if (!err) {
-      instagramCache[username] = data;
-    }
-    callback(err, data);
-  });
-}
-
 function artistsShow(req, res) {
   Artist
     .findById(req.params.id)
@@ -37,13 +21,7 @@ function artistsShow(req, res) {
         return res.render('error', { error: 'No Artist found.' });
       }
 
-      getInstagramData(artist.instagram, function(err, data) {
-        if (err) {
-          return res.render('error', { error: err });
-        }
-
-        return res.render('artists/show', { artist, instagram: data });
-      });
+      return res.render('artists/show', { artist });
     })
     .catch(err => {
       return res.render('error', { error: err });

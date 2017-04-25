@@ -4,6 +4,8 @@
 
 h1 {
   padding-bottom: 20px;
+  animation: glitch 3s infinite alternate-reverse;
+  animation-delay: 4s;
 }
 
 .input-group-btn {
@@ -30,37 +32,9 @@ h1 {
 .reasons {
   padding-bottom: 150px;
 
-    img {
-      filter: invert(100%);
-    }
-}
-
-.fullstar img {
-  width: 100%;
-  height: 100%;
-}
-
-.eye img {
-  width: 10px;
-  height: 10px;
-}
-
-.menu img {
-  width: 30px;
-  height: 30px;
-}
-
-.calendar img {
-  width: 30px;
-  height: 30px;
-}
-
-.search img {
-  width: 30px;
-  height: 30px;
-}
-
-.shop img {
-  width: 30px;
-  height: 30px;
+  img {
+    filter: invert(100%);
+    width: 64px;
+    height: 64px;
+  }
 }

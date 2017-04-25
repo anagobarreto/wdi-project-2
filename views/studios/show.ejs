@@ -3,6 +3,8 @@
 
   <h2>Artists</h2>
   <% for (const artist of artists) { %>
-    <p><a href="/artists/<%= artist._id %>"><%= artist.name %></a></p>
+    <p>
+      <a href="/artists/<%= artist._id %>"><%= artist.name %></a>
+    </p>
   <% } %>
 </div>

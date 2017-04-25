@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Edit artist</h2>
+
+  <form method="post" action="/artists/<%= artist._id %>">
+    <input type="hidden" name="_method" value="put">
+
+    <div class="form-group">
+      <label for="name">name</label>
+      <input class="form-control" type="text" id="name" value="<%= artist.name %>">
+    </div>
+
+    <div class="form-group">
+      <label for="studio">studio</label>
+      <input class="form-control" type="text" id="studio" name="studio" value="<%= artist.studio %>">
+    </div>
+
+    <div class="form-group">
+      <label for="location">location</label>
+      <input class="form-control" type="text" id="location" name="location" value="<%= artist.location %>">
+    </div>
+
+    <div class="form-group">
+      <label for="instagram">instagram</label>
+      <input class="form-control" type="text" id="instagram" name="instagram" value="<%= artist.instagram %>">
+    </div>
+
+    <div class="form-group">
+      <label for="contact">contact</label>
+      <input class="form-control" type="text" id="contact" name="contact" value="<%= artist.contact %>">
+    </div>
+
+    <div class="form-group">
+      <label for="website">website</label>
+      <input class="form-control" type="text" id="website" name="website" value="<%= artist.website %>">
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-primary">
+  </form>
+</div>

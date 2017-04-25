@@ -1,7 +1,9 @@
 <div class="container">
-  <h1>Artists</h1>
+  <h1>Search</h1>
+
+  <h2>Artists</h2>
   <div class="search-pic-container">
-    <% for (const artist of artists.sort(() => .5 - Math.random())) { %>
+    <% for (const artist of artists) { %>
       <a href="/artists/<%= artist._id %>" class="search-pic">
         <img src="<%= artist.profilePic %>">
         <div class="gradient"></div>
@@ -9,4 +11,6 @@
       </a>
     <% } %>
   </div>
+
+  <h2>Studios</h2>
 </div>

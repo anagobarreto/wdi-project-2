@@ -3,6 +3,7 @@ const router  = express.Router();
 
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook');
+const LocalStrategy = require('passport-local');
 
 const User = require('../models/user');
 
@@ -18,7 +19,7 @@ passport.use(
       } else {
         User
           .create({
-            facebookId: profile.id,
+            facebookId: profile.id
           })
           .then((user) => {
             callback(null, user);
@@ -27,6 +28,26 @@ passport.use(
     });
   })
 );
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function (err, user) {
+      if (err) {
+        return done(err);
+      }
+
+      if (!user) {
+        return done(null, false);
+      }
+
+      if (!user.validatePassword(password)) {
+        return done(null, false);
+      }
+
+      return done(null, user);
+    });
+  }
+));
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -49,17 +70,26 @@ router.get('/auth/facebook/callback',
 
 router.get('/', (req, res) => res.render('statics/home', {noSearch: true}));
 
-router.get('/login', (req, res) => res.render('statics/login'));
+router.get('/login', (req, res) => {
+  res.render('statics/login');
+});
+
+router.post('/login',
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+
 router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
 
 function secureRoute(req, res, next) {
-  if (!req.session.userId) {
+  if (!req.user || !req.user.admin) {
     return req.session.regenerate(() => {
-      req.flash('danger', 'You must be logged in.');
-      res.redirect('/login');
+      req.flash('danger', 'Not authorised.');
+      res.redirect('/');
     });
   }
 
@@ -93,5 +123,14 @@ router.route('/studios/:id/edit')
   .get(secureRoute, studios.edit);
 router.route('/studios/:id')
   .delete(secureRoute, studios.delete);
+
+const search = require('../controllers/search');
+router.route('/search')
+  .get(search.index);
+
+const users = require('../controllers/users');
+router.route('/register')
+  .get(users.new)
+  .post(users.create);
 
 module.exports = router;

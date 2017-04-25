@@ -7,12 +7,14 @@
   </div>
   <p>Find your next tattoo artist:</p>
 
-  <div class="input-group home-search">
-    <input type="text" class="form-control" placeholder="Tattoo artist, studio name or location...">
-    <span class="input-group-btn">
-      <button class="btn btn-default" type="button">Go!</button>
-    </span>
-  </div>
+  <form method="get" action="/search">
+    <div class="input-group home-search">
+      <input type="text" class="form-control" name="q" placeholder="Tattoo artist, studio name or location...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+  </form>
 
   <div class="map">
     <img src="http://www.fillmurray.com/600/200">

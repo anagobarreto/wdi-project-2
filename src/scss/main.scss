@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "homepage";
 @import "artists";
+@import "search";
+@import "studios";
 
 body {
   color: #b3cde0;
@@ -26,9 +28,4 @@ body {
   width: 30px;
   height: 30px;
   display: inline;
-}
-
-.reasons img {
-  width: 64px;
-  height: 64px;
 }

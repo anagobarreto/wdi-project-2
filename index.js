@@ -6,6 +6,7 @@ const mongoose        = require('mongoose');
 const methodOverride  = require('method-override');
 const passport        = require('passport');
 const env             = require('./config/env');
+const flash           = require('express-flash');
 const router          = require('./config/routes');
 const app             = express();
 
@@ -29,8 +30,9 @@ app.use(methodOverride((req) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(flash());
+
 app.use(function(req, res, next) {
-  console.log(req.isAuthenticated());
   res.locals.loggedIn = req.user ? true : false;
   res.locals.user = req.user;
   next();

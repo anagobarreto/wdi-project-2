@@ -1,6 +1,17 @@
 <div class="container">
   <h1>Studios</h1>
   <% for (const studio of studios) { %>
-    <p><a href="/studios/<%= studio._id %>"><%= studio.name %></a></p>
+    <p>
+      <h3><a href="/studios/<%= studio._id %>"><%= studio.name %></a></h3>
+
+      <ul class="studio-artists-inline">
+        <li>
+          <a href="#">
+            <div class="avatar"></div>
+            Ana Barreto
+          </a>
+        </li>
+      </ul>
+    </p>
   <% } %>
 </div>

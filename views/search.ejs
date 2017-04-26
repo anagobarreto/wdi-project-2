@@ -4,6 +4,7 @@
   <h2>Artists</h2>
   <div class="search-pic-container">
     <% for (const artist of artists) { %>
+      <% if (artist.place) continue; %>
       <a href="/artists/<%= artist._id %>" class="search-pic">
         <img src="<%= artist.profilePic %>">
         <div class="gradient"></div>
@@ -13,4 +14,14 @@
   </div>
 
   <h2>Studios</h2>
+  <div class="search-pic-container">
+    <% for (const artist of artists) { %>
+      <% if (!artist.place) continue; %>
+      <a href="/studios/<%= artist._id %>" class="search-pic">
+        <img src="<%= artist.profilePic %>">
+        <div class="gradient"></div>
+        <span><%= artist.name %></span>
+      </a>
+    <% } %>
+  </div>
 </div>

@@ -3,6 +3,8 @@
 @import "artists";
 @import "search";
 @import "studios";
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 
 body {
   color: #b3cde0;
@@ -28,4 +30,25 @@ body {
   width: 30px;
   height: 30px;
   display: inline;
+}
+
+.lightbox-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.8);
+  z-index: 3;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 640px;
+    height: 640px;
+    margin-top: -320px;
+    margin-left: -320px;
+  }
 }

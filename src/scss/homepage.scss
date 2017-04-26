@@ -26,7 +26,7 @@ h1 {
 }
 
 .map {
-  padding-bottom: 300px;
+  padding-bottom: 200px;
 }
 
 .reasons {
@@ -37,4 +37,50 @@ h1 {
     width: 64px;
     height: 64px;
   }
+}
+
+svg {
+    display: block;
+    font: 200px 'Montserrat';
+    width: 640px;
+    height: 203px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 6px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #515151;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #676767;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #7c7c7c;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #929292;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #a8a8a8;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
 }

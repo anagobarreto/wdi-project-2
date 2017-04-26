@@ -32,7 +32,7 @@
     <a class="btn btn-danger" href="/artists/<%= artist._id %>">Delete</a>
     <a class="btn btn-primary" href="/artists/<%= artist._id %>/edit">Edit</a>
   <% } %>
-  
+
   <h2>Portfolio</h2>
   <div class="portfoliopics">
     <% const instagramPhotos = artist.instagramData.items.slice(); %>
@@ -42,9 +42,9 @@
         <% for (const item of rowPhotos) { %>
           <% if (!item) continue; %>
           <div class="col-md-3">
-            <a class="portfolio-image-container" href="<%= item.link %>">
-              <img class="portfolio-image" src="<%= item.images.low_resolution.url %>">
-            </a>
+            <div class="portfolio-image-container lightbox">
+              <img class="portfolio-image thumbnail" src="<%= item.images.standard_resolution.url %>">
+            </div>
           </div>
         <% } %>
       </div>

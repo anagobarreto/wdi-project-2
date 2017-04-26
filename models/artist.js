@@ -8,7 +8,8 @@ const artistSchema = new mongoose.Schema({
   instagram: { type: String, trim: true, required: true, text: true },
   contact: { type: String, trim: true, text: true },
   website: { type: String, trim: true, text: true },
-  instagramData: { type: mongoose.Schema.Types.Mixed }
+  instagramData: { type: mongoose.Schema.Types.Mixed },
+  place: { type: Boolean }
 });
 
 const instagramCache = {};

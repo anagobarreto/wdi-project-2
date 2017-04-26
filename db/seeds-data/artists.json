@@ -309,5 +309,109 @@
     "instagram": "olivetats",
     "contact": "info@olivetats.com",
     "website": "http://www.kamiltattoos.co.uk"
+  },
+  {
+    "name": "Debora Cherrys",
+    "studio": "La Mujer Barbuda ",
+    "location": "Madrid, Spain",
+    "instagram": "deboracherrys",
+    "contact": "deboracherrys@gmail.com",
+    "website": "http://www.lamujerbarbudatattoo.com"
+  },
+  {
+    "name": "Parliament Tattoo",
+    "location": "London, UK",
+    "instagram": "parliamenttattoo",
+    "contact": "booking@parliamenttattoo.com",
+    "website": "http://www.parliamenttattoo.com/contact",
+    "coords": [51.566864, -0.114592],
+    "place": true
+  },
+  {
+    "name": "Unkindness Art",
+    "location": "Richmond, VA",
+    "instagram": "unkindnessart",
+    "contact": "unkindnessart@gmail.com",
+    "website": "http://unkindnessart.com",
+    "coords": [51.566864, -0.114592],
+    "place": true
+  },
+  {
+    "name": "Black Garden",
+    "location": "London, UK",
+    "instagram": "blackgardentattoo",
+    "contact": "blackgardentattoo@hotmail.com",
+    "website": "http://blackgardentattoo.com",
+    "coords": [51.515850, -0.123699],
+    "place": true
+  },
+  {
+    "name": "Kamil Tattoos",
+    "location": "London, UK",
+    "instagram": "kamiltattoos",
+    "website": "http://www.kamiltattoos.co.uk",
+    "coords": [51.566188, -0.122308],
+    "place": true
+  },
+  {
+    "name": "La Mujer Barbuda",
+    "location": "Madrid, Spain",
+    "instagram": "lamujerbarbudatattoo",
+    "website": "http://www.lamujerbarbudatattoo.com",
+    "coords": [40.313343, -3.726381],
+    "place": true
+  },
+  {
+    "name": "Jayne Doe",
+    "location": "London, UK",
+    "instagram": "jaynedoetattoo",
+    "website": "http://www.jaynedoe.bigcartel.com/",
+    "coords": [51.560293, 0.220295],
+    "place": true
+  },
+  {
+    "name": "Sang Bleu",
+    "location": "London, UK",
+    "instagram": "sbldnttt",
+    "website": "http://www.tttist.com/sangbleulondon",
+    "coords": [51.546376, -0.072599],
+    "place": true
+  },
+  {
+    "name": "Empire",
+    "location": "Melbourne, Australia",
+    "instagram": "empiremelbourne",
+    "coords": [-37.849488, 144.989241],
+    "place": true
+  },
+  {
+    "name": "Walk the Line",
+    "location": "Barcelona, Spain",
+    "instagram": "walk_the_line_tattoo",
+    "coords": [34.746527, -86.600092],
+    "place": true
+  },
+  {
+    "name": "Sacrifice Barcelona",
+    "location": "Barcelona, Spain",
+    "instagram": "sacrifice.bcn",
+    "coords": [41.405521, 2.150132],
+    "place": true
+  },
+  {
+    "name": "Dangerzone",
+    "location": "Melbourne, Australia",
+    "instagram": "dangerzonetattoo",
+    "website": "http://www.dangerzonetattoo.com",
+    "coords": [-37.796670, 144.978918],
+    "place": true
+  }
+  ,
+  {
+    "name": "Sacred Tattoo",
+    "location": "New York, USA",
+    "instagram": "sacredtattoonyc",
+    "coords": [40.719576, -74.001507],
+    "place": true
   }
 ]

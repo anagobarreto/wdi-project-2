@@ -1,9 +1,8 @@
-const Studio = require('../models/studio');
 const Artist = require('../models/artist');
 
 function studiosIndex(req,res) {
-  Studio
-    .find()
+  Artist
+    .find({place: true})
     .exec()
     .then(studios => {
       return res.render('studios', { studios });

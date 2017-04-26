@@ -1,17 +1,12 @@
 <div class="container">
   <h1>Studios</h1>
-  <% for (const studio of studios) { %>
-    <p>
-      <h3><a href="/studios/<%= studio._id %>"><%= studio.name %></a></h3>
-
-      <ul class="studio-artists-inline">
-        <li>
-          <a href="#">
-            <div class="avatar"></div>
-            Ana Barreto
-          </a>
-        </li>
-      </ul>
-    </p>
-  <% } %>
+  <div class="search-pic-container">
+    <% for (const studio of studios.sort(() => .5 - Math.random())) { %>
+      <a href="/studios/<%= studio._id %>" class="search-pic">
+        <img src="<%= studio.profilePic %>">
+        <div class="gradient"></div>
+        <span><%= studio.name %></span>
+      </a>
+    <% } %>
+  </div>
 </div>

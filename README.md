@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    <img alt="Novanoid" src="/images/logogif.gif" width="546">
+    <img alt="Novanoid" src="src/images/logogif.gif" width="546">
   </a>
 </p>
 <br>
@@ -44,10 +44,10 @@ ___
 
 Used Google Sheets to create the database with the information of my favourite artists:
 <div align="center">
-<img src="images/database.png" width="600" height="450">
+<img src="src/images/database.png" width="600" height="450">
 </div>
 
 To keep up with my to do tasks I used Trello:
 <div align="center">
-<img src="images/trello.png" width="600" height="450">
+<img src="src/images/trello.png" width="600" height="450">
 </div>

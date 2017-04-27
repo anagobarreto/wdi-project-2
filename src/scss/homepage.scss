@@ -12,6 +12,9 @@ h1 {
   padding-bottom: 30px;
 }
 
+.register {
+  padding-bottom: 90px;
+}
 
 .home-search {
   width: 53%;
@@ -83,4 +86,14 @@ svg {
 
 @keyframes stroke-offset{
 	100% {stroke-dashoffset: -35%;}
+}
+
+
+h3 {
+  font-size: 20px;
+}
+
+
+.register-container {
+  padding-top: 75px;
 }

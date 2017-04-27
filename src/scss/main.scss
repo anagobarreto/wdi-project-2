@@ -52,3 +52,21 @@ body {
     margin-left: -320px;
   }
 }
+
+footer {
+  background-color: #191919;
+  padding: 27px;
+
+  a {
+    text-decoration: none;
+
+  }
+  ul {
+    float: left;
+    width: 150px;
+  }
+  p{
+    float: right;
+    line-height: 70px;
+  }
+}

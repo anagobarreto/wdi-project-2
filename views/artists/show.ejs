@@ -13,15 +13,18 @@
     <div class="left">
       <h1><%= artist.name %></h1>
       <p><%= artist.studio %></p>
-      <p><%= artist.location %></p>
+      <p> <img src="/images/location.svg" width="32"><%= artist.location %></p>
     </div>
 
     <div class="right">
-      <p><a href="https://instagram.com/<%= artist.instagram %>"><%= artist.instagram %></a></p>
-      <p><a href="mailto:<%= artist.contact %>"><%= artist.contact %></a></p>
+      <p>
+      <img src="/images/instagram.svg" width="32"><a href="https://instagram.com/<%= artist.instagram %>"><%= artist.instagram %></a></p>
+      <p>
+      <img src="/images/mail.svg" width="32"><a href="mailto:<%= artist.contact %>"><%= artist.contact %></a></p>
 
       <% if (artist.website) { %>
-        <p><a href="<%= artist.website %>"><%= artist.website %></a></p>
+        <p><img src="/images/website.svg" width="32">
+        <a href="<%= artist.website %>"><%= artist.website %></a></p>
       <% } %>
     </div>
   </div>

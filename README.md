@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    <img alt="Novanoid" src="src/images/logogif.gif" width="546">
+    <img alt="Novanoid" src="src/images/logogif.gif" width="800">
   </a>
 </p>
 <br>

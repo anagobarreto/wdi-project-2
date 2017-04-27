@@ -21,7 +21,8 @@ $('.search-icon').click(function() {
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 1,
-    center: {lat: 0, lng: 0}
+    center: {lat: 0, lng: 0},
+    styles: [{"featureType":"all","elementType":"all","stylers":[{"saturation":-80},{"gamma":0.5}]}]
   });
 
   fetch('/studios-map.json')

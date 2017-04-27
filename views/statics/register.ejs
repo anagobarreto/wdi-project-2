@@ -3,10 +3,10 @@
   <% if (locals.message) { %>
     <p><%= message %></p>
   <% } %>
-  <form action="/register" method="post">
-    <p><input class="form-control account" type="text" name="username" placeholder="Username"></p>
-    <p><input class="form-control account" type="password" name="password" placeholder="Password"></p>
-    <p><input class="form-control account" type="password" name="passwordConfirmation" placeholder="Confirm Password"></p>
+  <form action="/register" method="post" class="account">
+    <p><input class="form-control" type="text" name="username" placeholder="Username"></p>
+    <p><input class="form-control" type="password" name="password" placeholder="Password"></p>
+    <p><input class="form-control" type="password" name="passwordConfirmation" placeholder="Confirm Password"></p>
     <input type="submit" value="Register" class="btn btn-primary">
   </form>
 </div>

@@ -11,7 +11,7 @@ passport.use(
   new FacebookStrategy({
     clientID: '2165833230295755',
     clientSecret: 'd2256f0ffc174d78916cd47d63e66f45',
-    callbackURL: 'http://localhost:8000/auth/facebook/callback'
+    callbackURL: '/auth/facebook/callback'
   }, function(accesToken, refreshToken, profile, callback) {
     User.findOne({ facebookId: profile.id }, function (err, user) {
       if (user) {
@@ -69,6 +69,8 @@ router.get('/auth/facebook/callback',
   });
 
 router.get('/', (req, res) => res.render('statics/home', {noSearch: true}));
+router.get('/contact', (req, res) => res.render('statics/contact'));
+router.get('/about', (req, res) => res.render('statics/about'));
 
 router.get('/login', (req, res) => {
   res.render('statics/login', {failed: req.query.failed});

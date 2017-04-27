@@ -3,11 +3,11 @@
   <% if (failed) { %>
     <p>Incorrect password or username! Try again.</p>
   <% } %>
-  <form action="/login" method="post">
-    <p><input class="form-control account" type="text" name="username" placeholder="Username"></p>
-    <p><input class="form-control account" type="password" name="password" placeholder="Password"></p>
+  <form action="/login" method="post" class="account">
+    <p><input class="form-control" type="text" name="username" placeholder="Username"></p>
+    <p><input class="form-control" type="password" name="password" placeholder="Password"></p>
     <input type="submit" value="Login" class="btn btn-primary">
+    <p class="or">or</p>
+    <a href="/auth/facebook" class="btn btn-primary">Login with Facebook</a>
   </form>
-  <p>or</p>
-  <a href="/auth/facebook">Login with Facebook</a>
 </div>

@@ -29,6 +29,22 @@ body {
     background-color: #222;
     color: #fff;
   }
+
+  .search-icon {
+    filter: invert(80%);
+    transform: scaleX(-1);
+    width: 24px;
+    margin-top: 13px;
+    cursor: pointer;
+
+    &:hover {
+      filter: invert(100%);
+    }
+  }
+
+  .search-box {
+    display: none;
+  }
 }
 
 .logotop img {
@@ -87,6 +103,12 @@ footer {
   }
 }
 
-form .account {
+form p.or {
+  margin-top: 10px;
+}
+
+form.account {
   width: 30%;
+  margin: 0 auto;
+  text-align: center;
 }

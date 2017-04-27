@@ -13,6 +13,11 @@ $('.lightbox').click(function(){
   container.append(image);
 });
 
+$('.search-icon').click(function() {
+  $('.search-box').slideToggle(150);
+  $('.search-box input').focus();
+});
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 1,

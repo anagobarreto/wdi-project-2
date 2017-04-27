@@ -71,11 +71,11 @@ router.get('/auth/facebook/callback',
 router.get('/', (req, res) => res.render('statics/home', {noSearch: true}));
 
 router.get('/login', (req, res) => {
-  res.render('statics/login');
+  res.render('statics/login', {failed: req.query.failed});
 });
 
 router.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local', { failureRedirect: '/login?failed=true' }),
   function(req, res) {
     res.redirect('/');
   });
@@ -112,17 +112,11 @@ router.route('/artists/:id')
 
 const studios = require('../controllers/studios');
 router.route('/studios')
-  .get(studios.index)
-  .post(secureRoute, studios.create);
-router.route('/studios/new')
-  .get(secureRoute, studios.new);
+  .get(studios.index);
+router.route('/studios-map.json')
+  .get(studios.mapAPI);
 router.route('/studios/:id')
-  .get(studios.show)
-  .put(secureRoute, studios.update);
-router.route('/studios/:id/edit')
-  .get(secureRoute, studios.edit);
-router.route('/studios/:id')
-  .delete(secureRoute, studios.delete);
+  .get(studios.show);
 
 const search = require('../controllers/search');
 router.route('/search')

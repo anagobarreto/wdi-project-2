@@ -28,8 +28,10 @@ h1 {
   filter: invert(100%);
 }
 
-.map {
-  padding-bottom: 200px;
+#map {
+  height: 300px;
+  width: 600px;
+  margin: 0 auto;
 }
 
 .reasons {

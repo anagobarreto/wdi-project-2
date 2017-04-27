@@ -13,15 +13,15 @@ function studiosIndex(req,res) {
 }
 
 function studiosShow(req, res) {
-  Studio
-    .findById(req.params.id)
+  Artist
+    .findOne({_id: req.params.id, place: true })
     .exec()
     .then(studio => {
       if (!studio) {
         return res.render('error', { error: 'No Studio found.' });
       }
 
-      return Artist.find({ studio: studio.name })
+      return Artist.find({ studio: studio._id })
         .then(artists => {
           return res.render('studios/show', { studio, artists });
         });
@@ -31,79 +31,30 @@ function studiosShow(req, res) {
     });
 }
 
-function studiosNew(req, res) {
-  return res.render('studios/new');
-}
-
-function studiosCreate(req, res) {
-  Studio
-    .create(req.body)
-    .then(studio => {
-      if (!studio) return res.render('error', { error: 'No studio was created!' });
-      return res.redirect('/studios');
-    })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
-}
-
-function studiosEdit(req, res) {
-  Studio
-    .findById(req.params.id)
+function studiosMapAPI(req, res) {
+  Artist
+    .find({place: true})
     .exec()
-    .then(studio => {
-      if (!studio) {
-        return res.render('error', { error: 'No studio found.' });
-      }
-      return res.render('studios/edit', { studio });
-    })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
-}
+    .then(studios => {
+      const data = [];
 
-function studiosUpdate(req, res) {
-  Studio
-    .findById(req.params.id)
-    .exec()
-    .then(studio => {
-      if (!studio) {
-        return res.render('error', { error: 'No studio found.' });
+      for (const studio of studios) {
+        data.push({
+          id: studio._id,
+          coords: studio.coords,
+          profilePic: studio.profilePic
+        });
       }
-      for (const field in req.body) {
-        studio[field] = req.body[field];
-      }
-      return studio.save();
-    })
-    .then(studio => {
-      if (!studio) {
-        return res.render('error', { error: 'Something went wrong during the update.' });
-      }
-      return res.render('studios/show', { studio });
-    })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
-}
 
-function studiosDelete(req, res) {
-  Studio
-    .findByIdAndRemove(req.params.id)
-    .exec()
-    .then(() => {
-      return res.redirect('/studios');
+      res.json(data);
     })
     .catch(err => {
-      return res.render('error', { error: err });
+      return res.render('error', { error: err});
     });
 }
 
 module.exports = {
   index: studiosIndex,
   show: studiosShow,
-  new: studiosNew,
-  create: studiosCreate,
-  edit: studiosEdit,
-  update: studiosUpdate,
-  delete: studiosDelete
+  mapAPI: studiosMapAPI
 };

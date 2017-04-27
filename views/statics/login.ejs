@@ -1,8 +1,11 @@
 <div class="container">
   <h1>Login</h1>
+  <% if (failed) { %>
+    <p>Incorrect password or username! Try again.</p>
+  <% } %>
   <form action="/login" method="post">
-    <p><input class="form-control" type="text" name="username" placeholder="Username"></p>
-    <p><input class="form-control" type="password" name="password" placeholder="Password"></p>
+    <p><input class="form-control account" type="text" name="username" placeholder="Username"></p>
+    <p><input class="form-control account" type="password" name="password" placeholder="Password"></p>
     <input type="submit" value="Login" class="btn btn-primary">
   </form>
   <p>or</p>

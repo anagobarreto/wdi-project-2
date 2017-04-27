@@ -15,6 +15,7 @@ function artistsIndex(req,res) {
 function artistsShow(req, res) {
   Artist
     .findById(req.params.id)
+    .populate('studio')
     .exec()
     .then(artist => {
       if (!artist) {

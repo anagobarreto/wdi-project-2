@@ -1,27 +1,30 @@
 <div class="container">
   <h1>Search</h1>
 
-  <h2>Artists</h2>
-  <div class="search-pic-container">
-    <% for (const artist of artists) { %>
-      <% if (artist.place) continue; %>
-      <a href="/artists/<%= artist._id %>" class="search-pic">
-        <img src="<%= artist.profilePic %>">
-        <div class="gradient"></div>
-        <span><%= artist.name %></span>
-      </a>
+  <% if (artists.length === 0 && studios.length === 0) { %>
+    <p>Sorry there were no artists found for your search query.</p>
+  <% } else { %>
+    <% if (artists.length) { %>
+      <h2>Artists</h2>
+      <div class="search-pic-container">
+        <% for (const artist of artists) { %>
+          <% if (artist.place) continue; %>
+          <%- include('./partials/grid-box', {artist}) %>
+        <% } %>
+      </div>
     <% } %>
-  </div>
 
-  <h2>Studios</h2>
-  <div class="search-pic-container">
-    <% for (const artist of artists) { %>
-      <% if (!artist.place) continue; %>
-      <a href="/studios/<%= artist._id %>" class="search-pic">
-        <img src="<%= artist.profilePic %>">
-        <div class="gradient"></div>
-        <span><%= artist.name %></span>
-      </a>
+    <% if (studios.length) { %>
+      <h2>Studios</h2>
+      <div class="search-pic-container">
+        <% for (const studio of studios) { %>
+          <a href="/studios/<%= studio._id %>" class="search-pic">
+            <img src="<%= studio.profilePic %>">
+            <div class="gradient"></div>
+            <span><%= studio.name %></span>
+          </a>
+        <% } %>
+      </div>
     <% } %>
-  </div>
+  <% } %>
 </div>

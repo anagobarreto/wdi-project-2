@@ -5,12 +5,18 @@
 @import "studios";
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
+html {
+  height: 100%;
+}
 
 body {
-  color: #b3cde0;
   background-color: #222;
-  color: #fff;
+  background-image: url("/images/noisy2.png");
+  color: #aaa;
   font-family: 'Droid Sans Mono', monospace;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 250px;
 }
 
 .navbar-brand {
@@ -56,9 +62,18 @@ body {
 footer {
   background-color: #191919;
   padding: 27px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  :hover {
+    color: #fff;
+  }
 
   a {
     text-decoration: none;
+    color: #888;
 
   }
   ul {
@@ -68,5 +83,10 @@ footer {
   p{
     float: right;
     line-height: 70px;
+    color: #666;
   }
+}
+
+form .account {
+  width: 30%;
 }

@@ -5,7 +5,6 @@ function searchIndex(req, res) {
   Artist.find({
     $or: [
       {name: {$regex: query}},
-      {studio: {$regex: query}},
       {location: {$regex: query}},
       {instagram: {$regex: query}},
       {contact: {$regex: query}},
@@ -14,7 +13,10 @@ function searchIndex(req, res) {
   })
     .exec()
     .then(artists => {
-      return res.render('search', { artists });
+      return res.render('search', {
+        artists: artists.filter(artist => !artist.place),
+        studios: artists.filter(artist => artist.place)
+      });
     })
     .catch(err => {
       return res.render('error', { error: err});
